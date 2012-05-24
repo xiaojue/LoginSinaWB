@@ -16,7 +16,7 @@ exports.login = function(username, password, callback) {
 			}
 		};
 		var jscode = browser.document.body.innerHTML;
-        //console.log(jscode);
+		//console.log(jscode);
 		var data = eval(jscode);
 		var sp = sha1(sha1(sha1(password)) + data.servertime + data.nonce);
 		var post_data = querystring.stringify({
@@ -57,7 +57,7 @@ exports.login = function(username, password, callback) {
 			res.on('end', function() {
 				var Cookies_url = jscode.match(/replace\(\'(.*?)\'\)/)[1];
 				browser.visit(Cookies_url, function() {
-                    console.log('登陆成功');
+					console.log('登陆成功');
 					var cookies = browser.saveCookies();
 					browser.loadCookies(cookies);
 					if (callback) callback(null, browser);
