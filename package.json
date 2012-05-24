@@ -1,0 +1,9 @@
+{
+    "name":"LoginSinaWB",
+    "version":"0.0.1",
+    "private":true,
+    "dependencies":{
+        "sha1":"0.0.1",
+        "zombie":"1.1.4"
+    }
+}
